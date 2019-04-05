@@ -139,9 +139,9 @@ def analyse_acf(full_arr, diff, length, args, funcs, fill_factor, minFreq):
         error_1 = np.sqrt(np.diag(cov_1))
         error_2 = np.sqrt(np.diag(cov_2))
         freq_error = globals()[funcs['func_f'].__name__ + '_h_err'](parameters_1, error_1)
-        freq_error = np.sqrt(freq_error ** 2 + (e_time * stat_error) ** 2)
+        freq_error = np.sqrt(freq_error ** 2 + (hwhm_freq * stat_error) ** 2)
         time_error = globals()[funcs['func_t'].__name__ + '_e_err'](parameters_2, error_1)
-        time_error = np.sqrt(freq_error ** 2 + (e_time * stat_error) ** 2)
+        time_error = np.sqrt(time_error ** 2 + (e_time * stat_error) ** 2)
     return acf_norm, length, middle_f, middle_t, freqlag_ticks, midACF_freq, extrapo_x, extrapo_y, timelag_ticks, midACF_time, extrapo_x2, extrapo_y2, \
         hwhm_freq, freq_error, e_time, time_error
 
