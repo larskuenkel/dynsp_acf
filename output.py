@@ -8,7 +8,7 @@ from matplotlib.patches import Ellipse
 
 def plot_dyn(full_arr, args, length, diff, minFreq, maxFreq, ar_freq, name, mjd, ar):
     hour_length = length / 3600.0
-    title_data = '\n %s MJD:%.2f  Duration:%.2fh\nFrequency:%.2fMHz  Bandwith:%.2fMHz' % (name, mjd, hour_length, ar_freq, diff)
+    title_data = '\n %s MJD:%.2f  Duration:%.2fh\nFrequency:%.2fMHz  Bandwidth:%.2fMHz' % (name, mjd, hour_length, ar_freq, diff)
     plt.close('all')
 
     dyn_plot = plt.figure(1)
@@ -37,7 +37,7 @@ def plot_acf(full_arr, args, acf_norm, length, minFreq, maxFreq, middle, middle2
         f_scale = diff / (f_range*4)
     else: f_scale = 1
     hour_length = length / 3600.0
-    title_data = '\n %s MJD:%.2f  Duration:%.2fh\nFreqency:%.2fMHz  Bandwith:%.2fMHz' % (name, mjd, hour_length, ar_freq, diff)
+    title_data = '\n %s MJD:%.2f  Duration:%.2fh\nFreqency:%.2fMHz  Bandwidth:%.2fMHz' % (name, mjd, hour_length, ar_freq, diff)
 
 
     min_y_value = np.min(acf_norm[int(middle):int(middle+middle*0.5*f_scale),int(middle2-middle2*0.5*t_scale):int(middle2+middle2*0.5*t_scale)])
@@ -101,7 +101,7 @@ def plot_acf(full_arr, args, acf_norm, length, minFreq, maxFreq, middle, middle2
     
 def plot_secondary(sec_spec, args, mhzperbin, secperbin, ar, ar_freq, name, diff, length, mjd, site, sec_axes, curv):
     hour_length = length / 3600.0
-    title_data = '\n %s MJD:%.2f  Duration:%.2fh\nFrequency:%.2fMHz  Bandwith:%.2fMHz' % (name, mjd, hour_length, ar_freq, diff)
+    title_data = '\n %s MJD:%.2f  Duration:%.2fh\nFrequency:%.2fMHz  Bandwidth:%.2fMHz' % (name, mjd, hour_length, ar_freq, diff)
 
     sec_plot = plt.figure(4)
     ax = sec_plot.add_subplot(111, aspect='auto')
